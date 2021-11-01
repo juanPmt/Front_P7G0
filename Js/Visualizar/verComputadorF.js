@@ -1,7 +1,13 @@
-function verComputador(){
+$(document).ready(function () {
+    let searchParams = new URLSearchParams(window.location.search)
+    console.log("Entre a computadores")
+    verComputadorF()   
+});
+
+function verComputadorF(){
     //Nos trae desde el servidos la base de datos de la tabla computador
         $.ajax({
-            url:"https://ga61db958975b8f-alquilerpc.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/computer/computer",
+            url:"http://150.136.25.206:8080/api/Computer/all",
             type: 'GET',
             dataType: 'json',
             success: function(respuesta){
@@ -33,11 +39,8 @@ function verComputador(){
                        <td>${items[i].brand}</td> 
                        <td>${items[i].name}</td>
                        <td>${items[i].year}</td>
-                       <td>${items[i].category_id}</td>
-                       <td>
-                            <button onclick="eliminar_computer(${items[i].id})">Eliminar</button>
-                            <a href="detalle_computer.html?id=${items[i].id}">Editar</a>
-                       </td>                   
+                       <td>${items[i].category}</td>
+                       <td>${items[i].description}</td>                   
                     </tr>`;
         }
         tablaCM +=`</table>`;

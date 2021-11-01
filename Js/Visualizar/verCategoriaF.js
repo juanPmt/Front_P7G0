@@ -5,7 +5,7 @@ $(document).ready(function () {
 });
 
 function verCategoriaF(){
-    //Nos trae desde el servidos la base de datos de la tabla computador
+    //Nos trae desde el servidos la base de datos de la tabla categoria
         $.ajax({
             url:"http://150.136.25.206:8080/api/Category/all",
             type: 'GET',

@@ -4,7 +4,7 @@ function crearCategoriaF(){
         description: $("#inputDescripcionCat").val(),
     };
 
-    console.log("Se va a registrar la categoria", computador.name);
+    console.log("Se va a registrar la categoria", categoria.name);
 
     $.ajax({
         url: "http://150.136.25.206:8080/api/Category/save",

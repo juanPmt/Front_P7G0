@@ -9,7 +9,7 @@ function crearComputador(){
     console.log("Se va a registrar el equipo", typeof computador.name);
 
     $.ajax({
-        url: "https://ga61db958975b8f-alquilerpc.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/computer/computer",
+        url: "http://150.136.25.206:8080/api/Computer/save",
         type: 'POST',
         dataType: 'json',
         headers: {
@@ -23,5 +23,4 @@ function crearComputador(){
         },
     });
     
-    consultar_computer();
 }

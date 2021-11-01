@@ -7,7 +7,7 @@ $(document).ready(function () {
 function verCategoriaF(){
     //Nos trae desde el servidos la base de datos de la tabla categoria
         $.ajax({
-            url:"https://cryptic-headland-94862.herokuapp.com/http://localhost:8010/api/Category/all",
+            url:"http://localhost:8010/api/Category/all",
             //url:"http://150.136.25.206:8080/api/Category/all",
             //url:"http://150.136.86.202:8080/api/Category/all",
             type: 'GET',

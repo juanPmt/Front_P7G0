@@ -7,6 +7,7 @@
     <title>Agregar calificación de reserva</title>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../Js/CrearF/crearReviewF.Js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -37,14 +38,14 @@
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label for="inputMensaje">Mensaje</label>
-                                <input type="txt" class="form-control" id="Mensaje" placeholder="Ingrese un mensaje...">
+                                <input type="txt" class="form-control" id="MensajeR" placeholder="Ingrese un mensaje...">
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label for="inputReserva">Reserva:</label>
-                                <input type="number" class="form-control" id="inputReserva">
+                                <input type="number" class="form-control" id="inputIdReserva">
                             </div>
                         </div>
 
@@ -52,7 +53,7 @@
 
                         <div class="col-md-12">
                             <div class="mb-6">
-                                <button type="button" class="btn btn-primary"
+                                <button onclick="crearReviewF()" type="button" class="btn btn-primary"
                                     style="margin-right:5px; width:100px">Crear</button>
                                 <a href="../index.html" type="button" class="btn btn-primary"
                                     style="width:100px">Inicio</a>

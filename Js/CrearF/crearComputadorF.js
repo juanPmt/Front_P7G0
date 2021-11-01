@@ -1,4 +1,4 @@
-function crearComputador(){
+function crearComputadorF(){
     let computador = {
         brand:  $("#ValoresMarca").val(),
         name: $("#inputNombreCom").val(),

@@ -7,12 +7,13 @@ $(document).ready(function () {
 function verComputadorF(){
     //Nos trae desde el servidos la base de datos de la tabla computador
         $.ajax({
-            url:"http://150.136.25.206:8080/api/Computer/all",
+            url:"http://localhost:8010/api/Category/all",
+            //url:"http://150.136.25.206:8080/api/Category/all",
             type: 'GET',
             dataType: 'json',
             success: function(respuesta){
-                console.log(respuesta.items);
-                mostrarRespuestaCom(respuesta.items);
+                console.log(respuesta);
+                mostrarRespuestaCom(respuesta);
             },
             error: function (xhr, status) {
                 alert('ha sucedido un problema');
@@ -23,7 +24,7 @@ function verComputadorF(){
         });    
     }
     
-    function mostrarRespuestaCom(items){
+    function mostrarRespuestaCom(respuesta){
         let tablaCM = `<table border="1">
                       <tr>
                         <th>Marca</th>
@@ -33,7 +34,7 @@ function verComputadorF(){
                         <th>Descripción</th>                    
                       </tr>`;                  
         
-        for (let i=0; i < items.length; i++) {
+        for (let i=0; i < respuesta.length; i++) {
            
             tablaCM +=`<tr>
                        <td>${items[i].brand}</td> 

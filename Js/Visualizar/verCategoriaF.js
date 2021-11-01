@@ -7,12 +7,14 @@ $(document).ready(function () {
 function verCategoriaF(){
     //Nos trae desde el servidos la base de datos de la tabla categoria
         $.ajax({
-            url:"http://150.136.25.206:8080/api/Category/all",
+            url:"https://cryptic-headland-94862.herokuapp.com/http://localhost:8010/api/Category/all",
+            //url:"http://150.136.25.206:8080/api/Category/all",
+            //url:"http://150.136.86.202:8080/api/Category/all",
             type: 'GET',
             dataType: 'json',
             success: function(respuesta){
-                console.log(respuesta.items);
-                mostrarRespuestaCat(respuesta.items);
+                console.log(respuesta);
+                mostrarRespuestaCat(respuesta);
             },
             error: function (xhr, status) {
                 alert('ha sucedido un problema');
@@ -23,18 +25,18 @@ function verCategoriaF(){
         });    
     }
 
-    function mostrarRespuestaCat(items){
+    function mostrarRespuestaCat(respuesta){
         let tablaCT = `<table border="1">
                       <tr>
                         <th>Nombre</th>
                         <th>Descripción</th>                    
                       </tr>`;                  
         
-        for (let i=0; i < items.length; i++) {
+        for (let i=0; i < respuesta.length; i++) {
            
             tablaCT +=`<tr> 
-                       <td>${items[i].name}</td>
-                       <td>${items[i].description}</td>                   
+                       <td>${respuesta[i].name}</td>
+                       <td>${respuesta[i].description}</td>                   
                     </tr>`;
         }
         tablaCT +=`</table>`;
